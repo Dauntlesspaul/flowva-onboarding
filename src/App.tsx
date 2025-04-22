@@ -17,13 +17,13 @@
  * This structure ensures that the app is scalable, maintainable, and easy to extend in the future.
  */
 import { useState } from "react";
-import About from "./component/about";
-import Welcome from "./component/welcome";
-import Location from "./component/location";
-import ToolStack from "./component/stack";
-import Personalization from "./component/personalization ";
-import Completed from "./component/complete";
-import CompleteModal from "./component/complete-modal";
+import About from "./components/about";
+import Welcome from "./components/welcome";
+import Location from "./components/location";
+import ToolStack from "./components/stack";
+import Personalization from "./components/personalization ";
+import Completed from "./components/complete";
+import CompleteModal from "./components/complete-modal";
 
 function App() {
   const [step, setStep] = useState<number>(0);

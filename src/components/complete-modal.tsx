@@ -20,6 +20,8 @@
  * - The modal is styled using a class name `modal-container` and `modal-card`, and the `display` style is dynamically set based on the `open` state.
  */
 
+import { useEffect } from "react";
+
 function CompleteModal({
   open,
   setOpen,
@@ -27,6 +29,17 @@ function CompleteModal({
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [open]);
   return (
     <div
       style={{ display: open ? "block" : "none" }}
